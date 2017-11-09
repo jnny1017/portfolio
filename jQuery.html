@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  <script type="text/javascript">
+	$(document).ready(function(){
+		var current = 0;
+		var slide_length = $('.slide>li').length;
+
+		$('.slide>li').hide();
+		$('.slide>li').first().show();
+
+		function autoplay(){
+			if(current == slide_length-1){
+				current = 0;
+			}else{
+				current++;
+			}
+
+			$('.slide>li').fadeOut(1000);
+			$('.slide>li').eq(current).fadeIn(1200);
+		}
+
+		setInterval(autoplay,2300);
+
+	});
+	</script>
+	<ul class="slide">
+		<li style="display: none;"><img src="img/main_img01.jpg" alt="1"></li>
+		<li style="display: none;"><img src="img/main_img02.jpg" alt="2"></li>
+		<li style="display: list-item;"><img src="img/main_img03.jpg" alt="3"></li>
+		<li style="display: none;"><img src="img/main_img04.jpg" alt="4"></li>
+	</ul>
+ </body>
+</html>
